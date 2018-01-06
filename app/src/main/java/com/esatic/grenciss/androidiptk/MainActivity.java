@@ -1,12 +1,16 @@
 package com.esatic.grenciss.androidiptk;
 
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Explode;
+import android.transition.Slide;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,8 +22,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setElevation(0);
+
+        Explode explode = new Explode();
+        Slide slide = new Slide();
+        explode.excludeTarget(android.R.id.navigationBarBackground,true);
+        slide.excludeTarget(android.R.id.navigationBarBackground,true);
+        explode.excludeTarget(android.R.id.statusBarBackground,true);
+        slide.excludeTarget(android.R.id.statusBarBackground,true);
+        getWindow().setExitTransition(explode);
+        getWindow().setReenterTransition(slide);
 
         this.iPv4 = new IPv4();
 
@@ -64,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
                 String ip = txtIP.getText() + "/" + txtMSQ.getText();
                 I.putExtra("ip",ip);
-                startActivity(I);
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this);
+                startActivity(I, options.toBundle());
             }
         });
     }
