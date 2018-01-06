@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnValider = (Button)findViewById(R.id.btnValider);
         final TextView txtIP = (TextView)findViewById(R.id.txtIP);
-        TextView txtMSQ = (TextView)findViewById(R.id.txtMSQ);
+        final TextView txtMSQ = (TextView)findViewById(R.id.txtMSQ);
+
+        txtIP.requestFocus();
 
         btnValider.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +49,27 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (String.valueOf(txtMSQ.getText())=="" || Integer.parseInt(String.valueOf(txtMSQ.getText()))>32)
+                {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                    alertDialogBuilder.setMessage("Le masque est invalide");
+                    alertDialogBuilder.setPositiveButton("Okay",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                            }
+                        });
+
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                    return;
+                }
+
                 Intent I = new Intent(MainActivity.this, Main2Activity.class);
+
+                String ip = txtIP.getText() + "/" + txtMSQ.getText();
+                I.putExtra("ip",ip);
                 startActivity(I);
             }
         });
