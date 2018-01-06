@@ -49,20 +49,14 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (String.valueOf(txtMSQ.getText())=="" || Integer.parseInt(String.valueOf(txtMSQ.getText()))>32)
+                if (String.valueOf(txtMSQ.getText()).isEmpty())
                 {
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-                    alertDialogBuilder.setMessage("Le masque est invalide");
-                    alertDialogBuilder.setPositiveButton("Okay",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
-
-                            }
-                        });
-
-                    AlertDialog alertDialog = alertDialogBuilder.create();
-                    alertDialog.show();
+                    MSQAlertDialog();
+                    return;
+                }
+                else if (Integer.parseInt(String.valueOf(txtMSQ.getText()))>32)
+                {
+                    MSQAlertDialog();
                     return;
                 }
 
@@ -73,5 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(I);
             }
         });
+    }
+
+    public void MSQAlertDialog()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+        alertDialogBuilder.setMessage("Le masque est invalide");
+        alertDialogBuilder.setPositiveButton("Okay",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                    }
+                });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 }
