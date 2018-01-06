@@ -4,15 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorButtonNormal"
     tools:context="com.esatic.grenciss.androidiptk.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/textView"
+        android:layout_width="238dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="44dp"
+        android:text="IP Calculator"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mainCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/mainCard"
+        android:layout_width="303dp"
+        android:layout_height="213dp"
+        android:layout_marginBottom="55dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cardL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="59dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="47dp"
+                android:text="m"
+                app:layout_constraintBottom_toTopOf="@+id/txtMSQ"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtMSQ"
+                android:layout_width="54dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="107dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="61dp"
+                android:background="@color/colorPrimaryDark"
+                android:ems="10"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="number"
+                android:textColor="@android:color/background_light"
+                android:labelFor="@id/txtMSQ"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtIP"
+                android:layout_width="186dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="107dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="61dp"
+                android:labelFor="@id/txtIP"
+                android:background="@color/colorPrimaryDark"
+                android:ems="10"
+                android:gravity="center_vertical|center_horizontal"
+                android:inputType="phone"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="52dp"
+                android:text="/"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txtMSQ"
+                app:layout_constraintStart_toEndOf="@+id/txtIP"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnValider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginStart="198dp"
+                android:layout_marginTop="26dp"
+                android:text="Valider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="184dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="47dp"
+                android:text="adresse IP"
+                app:layout_constraintBottom_toTopOf="@+id/txtIP"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>
