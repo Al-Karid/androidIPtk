@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.esatic.grenciss.androidiptk.classes.IPv4;
+
 public class Main2Activity extends AppCompatActivity {
 
     @Override
@@ -24,7 +26,7 @@ public class Main2Activity extends AppCompatActivity {
 
         IPv4 iPv4 = new IPv4(String.valueOf(extras.get("ip")));
 
-        tvIPCIDR.setText(iPv4.getCIDR());
+        tvIPCIDR.setText(String.valueOf(extras.get("ip")));
         tvNH.setText(String.valueOf(iPv4.getNumberOfHosts()));
         tvNA.setText(iPv4.getCIDR());
         tvNM.setText(iPv4.getNetmask());

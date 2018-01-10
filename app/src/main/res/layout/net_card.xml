@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="2dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="304dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="Réseau #1"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adresse réseau" />
+
+                        <TextView
+                            android:id="@+id/txtAddr"
+                            android:layout_width="148dp"
+                            android:layout_height="wrap_content"
+                            android:text="192.168.20.0"
+                            android:textAlignment="textEnd"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Masque réseau" />
+
+                        <TextView
+                            android:id="@+id/txtMask"
+                            android:layout_width="148dp"
+                            android:layout_height="wrap_content"
+                            android:text="255.255.255.0 (/24)"
+                            android:textAlignment="textEnd" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nb d'hôtes souhaités" />
+
+                        <TextView
+                            android:id="@+id/txtNbHosts"
+                            android:layout_width="148dp"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:textAlignment="textEnd" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nb d'hôtes adressables" />
+
+                        <TextView
+                            android:id="@+id/txtAddrHosts"
+                            android:layout_width="148dp"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textAlignment="textEnd" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interval adressable" />
+
+                        <TextView
+                            android:id="@+id/txtAddrRange"
+                            android:layout_width="145dp"
+                            android:layout_height="wrap_content"
+                            android:text="192.168.20.1 - 255.255.255.0"
+                            android:textAlignment="textEnd"
+                            android:textSize="10sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adresse de broadcast" />
+
+                        <TextView
+                            android:id="@+id/txtAddr6"
+                            android:layout_width="148dp"
+                            android:layout_height="wrap_content"
+                            android:text="255.255.255.0"
+                            android:textAlignment="textEnd" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

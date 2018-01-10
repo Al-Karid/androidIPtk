@@ -2,7 +2,6 @@ package com.esatic.grenciss.androidiptk;
 
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +12,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.esatic.grenciss.androidiptk.classes.IPv4;
 
 public class MainActivity extends AppCompatActivity {
 
