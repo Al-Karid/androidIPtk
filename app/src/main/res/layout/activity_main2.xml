@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context="com.esatic.grenciss.androidiptk.Main2Activity"
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="304dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="14dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
         app:cardCornerRadius="0dp"
         app:cardElevation="1dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.53">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,13 +34,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="116dp"
-                android:layout_marginTop="1dp"
                 android:fontFamily="serif"
                 android:text="Adresse IP"
                 app:layout_constraintBottom_toTopOf="@+id/tvIPCIDR"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.62" />
 
             <TextView
                 android:id="@+id/tvIPCIDR"
@@ -53,18 +55,20 @@
                 app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.79" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="304dp"
-        android:layout_height="105dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="25dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         app:cardCornerRadius="0dp"
         app:cardElevation="1dp"
         app:layout_constraintBottom_toTopOf="@+id/plageView"
@@ -76,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/textView14"
@@ -104,7 +108,8 @@
                         android:id="@+id/tvNH"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="24" />
+                        android:text="24"
+                        android:textAlignment="textEnd" />
                 </TableRow>
 
                 <TableRow
@@ -122,6 +127,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="192.168.20.0"
+                        android:textAlignment="textEnd"
                         android:textStyle="bold" />
                 </TableRow>
 
@@ -139,7 +145,8 @@
                         android:id="@+id/tvNM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="255.255.255.0" />
+                        android:text="255.255.255.0"
+                        android:textAlignment="textEnd" />
                 </TableRow>
 
                 <TableRow
@@ -154,9 +161,10 @@
 
                     <TextView
                         android:id="@+id/tvBC"
-                        android:layout_width="wrap_content"
+                        android:layout_width="131dp"
                         android:layout_height="wrap_content"
-                        android:text="192.168.23.227" />
+                        android:text="192.168.23.227"
+                        android:textAlignment="textEnd" />
                 </TableRow>
 
             </TableLayout>
@@ -168,10 +176,11 @@
     <android.support.v7.widget.CardView
         android:id="@+id/plageView"
         android:layout_width="304dp"
-        android:layout_height="54dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="205dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
         app:cardCornerRadius="0dp"
         app:cardElevation="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -192,9 +201,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="Plage d'hôtes fonfigurables"
-                android:textColor="@color/cardview_dark_background"
-                android:textStyle="bold" />
+                android:paddingTop="7dp"
+                android:text="Plage d'hôtes configurables"
+                android:textColor="@color/cardview_dark_background" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -220,4 +229,15 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btnVLSM"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="8dp"
+        android:text="VLSM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plageView" />
 </android.support.constraint.ConstraintLayout>

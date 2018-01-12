@@ -45,9 +45,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/i"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="0dp"
@@ -64,7 +64,9 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_info_outline_black_24dp" />
 
             <TextView
@@ -72,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="serif"
                 android:text="Analyse"
                 android:textSize="25sp"
@@ -85,7 +87,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/v"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="30dp"
         android:clickable="true"
@@ -104,7 +106,9 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_subject_black_24dp" />
 
             <TextView
@@ -112,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="serif"
                 android:text="VLSM"
                 android:textSize="25sp"

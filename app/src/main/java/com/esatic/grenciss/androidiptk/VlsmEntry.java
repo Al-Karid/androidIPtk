@@ -55,6 +55,29 @@ public class VlsmEntry extends AppCompatActivity {
                 TextView txtIP4 = (TextView)findViewById(R.id.txtIP4);
                 TextView nbSubnet = (TextView)findViewById(R.id.nbSubnet);
 
+                if (String.valueOf(nbSubnet.getText()).isEmpty() || Integer.parseInt(String.valueOf(nbSubnet.getText())) <2)
+                {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(VlsmEntry.this);
+                    alertDialogBuilder.setMessage("Le nombre de sous réseau doit être au moins 2");
+                    alertDialogBuilder.setPositiveButton("Okay",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface arg0, int arg1) {
+
+                                }
+                            });
+
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                    return;
+                }
+
+                txtIP1.setNextFocusForwardId(txtIP2.getId());
+                txtIP1.setNextFocusDownId(txtIP2.getId());
+                txtIP1.setNextFocusLeftId(txtIP2.getId());
+                txtIP1.setNextFocusRightId(txtIP2.getId());
+                txtIP1.setNextFocusUpId(txtIP2.getId());
+
                 IP = String.valueOf(txtIP1.getText())+"."+String.valueOf(txtIP2.getText())+"."+String.valueOf(txtIP3.getText())+"."+String.valueOf(txtIP4.getText());
 
                 if (!iPv4.validateIPAddress(String.valueOf(IP)))
@@ -126,6 +149,17 @@ public class VlsmEntry extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                for (int i=0;i<editTextList.size();i++)
+                {
+                    if (String.valueOf(editTextList.get(i).getText()).isEmpty()) {
+                        nSubnetDialog();
+                        return;
+                    }
+                    else if (Integer.parseInt(String.valueOf(editTextList.get(i).getText())) == 0) {
+                        nSubnetDialog();
+                        return;
+                    }
+                }
 //                StringBuilder stringBuilder = new StringBuilder();
                 String[] strings = new String[editTextList.size()];
                 Intent I = new Intent(VlsmEntry.this,VlsmShow.class);
@@ -175,6 +209,24 @@ public class VlsmEntry extends AppCompatActivity {
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
     }
+
+    public void nSubnetDialog()
+    {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(VlsmEntry.this);
+            alertDialogBuilder.setMessage("Le nombre minimum de d'hôtes doit être 1 pour chaque sous-réseau");
+            alertDialogBuilder.setPositiveButton("Okay",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+
+                        }
+                    });
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+    }
+
+
 
     // Access the value of the EditText
 

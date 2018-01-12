@@ -47,6 +47,7 @@ public class NetCardAdapter extends RecyclerView.Adapter<NetCardAdapter.NetCardV
         holder.mask.setText(vlsm.mask);
         holder.range.setText(vlsm.range);
         holder.broadcast.setText(vlsm.broadcast);
+        holder.titleAddr.setText(vlsm.address);
     }
 
     public class NetCardViewHolder extends RecyclerView.ViewHolder {
@@ -57,6 +58,7 @@ public class NetCardAdapter extends RecyclerView.Adapter<NetCardAdapter.NetCardV
         public TextView mask;
         public TextView range;
         public TextView broadcast;
+        public TextView titleAddr;
         public NetCardViewHolder(View itemView) {
             super(itemView);
             this.name = (TextView)itemView.findViewById(R.id.txtTitle);
@@ -66,6 +68,7 @@ public class NetCardAdapter extends RecyclerView.Adapter<NetCardAdapter.NetCardV
             this.mask = (TextView)itemView.findViewById(R.id.txtMask);
             this.range = (TextView)itemView.findViewById(R.id.txtAddrRange);
             this.broadcast = (TextView)itemView.findViewById(R.id.txtAddr6);
+            this.titleAddr = (TextView)itemView.findViewById(R.id.txtTitleAddr);
         }
     }
 }

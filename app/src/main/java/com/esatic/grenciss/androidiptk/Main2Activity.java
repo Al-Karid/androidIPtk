@@ -1,7 +1,10 @@
 package com.esatic.grenciss.androidiptk;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.esatic.grenciss.androidiptk.classes.IPv4;
@@ -23,6 +26,15 @@ public class Main2Activity extends AppCompatActivity {
         TextView tvNM = (TextView)findViewById(R.id.tvNM);
         TextView tvBC = (TextView)findViewById(R.id.tvBC);
         TextView tvRG = (TextView)findViewById(R.id.tvRG);
+        Button btnV = (Button)findViewById(R.id.btnVLSM);
+
+        btnV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent I = new Intent(Main2Activity.this,VlsmEntry.class);
+                startActivity(I);
+            }
+        });
 
         IPv4 iPv4 = new IPv4(String.valueOf(extras.get("ip")));
 
